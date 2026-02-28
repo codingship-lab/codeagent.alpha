@@ -1,0 +1,2 @@
+GROQ_API_KEY is not set. Requests to /api/chat will fail until configured.
+CodeAgent chat running on http://localhost:3000

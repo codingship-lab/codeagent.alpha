@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover"
+    />
+    <title>CodeAgent</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <header class="top-bar">
+        <div class="brand-wrap">
+          <span class="brand-dot" aria-hidden="true"></span>
+          <span class="brand">CodeAgent</span>
+        </div>
+      </header>
+
+      <main class="workspace" aria-live="polite">
+        <section id="chat-panel" class="panel panel-visible">
+          <div id="messages" class="messages"></div>
+        </section>
+
+        <section id="preview-panel" class="panel" aria-live="polite">
+          <div class="preview-content">
+            <div class="preview-frame-wrap">
+              <iframe id="preview-frame" class="preview-frame" title="Preview output"></iframe>
+              <div id="preview-empty" class="preview-empty">Preview появится после первого успешного patch.</div>
+
+              <div class="preview-overlay">
+                <span id="preview-status" class="preview-status preview-status-idle">Idle</span>
+                <a id="preview-link" class="preview-link" href="#" target="_blank" rel="noreferrer noopener" hidden>Open</a>
+              </div>
+            </div>
+          </div>
+        </section>
+      </main>
+
+      <form id="chat-form" class="composer-wrap" autocomplete="off">
+        <div class="composer">
+          <textarea
+            id="chat-input"
+            rows="1"
+            placeholder="Напишите сообщение..."
+            aria-label="Message input"
+          ></textarea>
+          <button id="send-button" type="submit">Send</button>
+        </div>
+        <div class="view-switch" role="tablist" aria-label="Primary views">
+          <button id="tab-chat" class="view-tab view-tab-active" type="button" role="tab" aria-selected="true">Chat</button>
+          <button id="tab-preview" class="view-tab" type="button" role="tab" aria-selected="false">Preview</button>
+        </div>
+      </form>
+    </div>
+
+    <script type="module" src="/app.js"></script>
+  </body>
+</html>

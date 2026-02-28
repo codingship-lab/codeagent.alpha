@@ -1,0 +1,7 @@
+node_modules
+.env
+.vercel
+.nohup-out
+.server.log
+Screenshot_*.png
+codeagent/
