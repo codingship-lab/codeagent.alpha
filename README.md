@@ -53,7 +53,7 @@ The web app uses OpenNext for Cloudflare Workers.
 
 Recommended build settings in Cloudflare:
 
-- Build command: `npm run cf:build`
+- Build command: `npm run build`
 - Build output directory: `.open-next/assets`
 - Node version: `20` or `22`
 
