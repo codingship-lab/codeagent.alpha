@@ -9,19 +9,17 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { Button } from '@/components/ui/button';
 import { Maximize2, MessageSquare, Eye } from 'lucide-react';
 
-export function ChatPage() {
-  const searchParams = useSearchParams();
+export function ChatPage({ initialPrompt = '' }) {
   const router = useRouter();
   const [messages, setMessages] = useState([]);
   const [activeTab, setActiveTab] = useState('chat');
   const [syncStatus, setSyncStatus] = useState('idle');
 
   useEffect(() => {
-    const prompt = searchParams.get('prompt');
-    if (prompt) {
-      setMessages([{ role: 'user', content: prompt }]);
+    if (initialPrompt) {
+      setMessages([{ role: 'user', content: initialPrompt }]);
     }
-  }, [searchParams]);
+  }, [initialPrompt]);
 
   const handleSync = () => {
     setSyncStatus('syncing');
@@ -117,4 +115,11 @@ export function ChatPage() {
 
 function cn(...inputs) {
   return inputs.filter(Boolean).join(' ');
+}
+
+export function ChatPageWithSearchParams() {
+  const searchParams = useSearchParams();
+  const initialPrompt = searchParams.get('prompt') || '';
+
+  return <ChatPage initialPrompt={initialPrompt} />;
 }

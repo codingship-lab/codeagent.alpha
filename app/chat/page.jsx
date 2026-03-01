@@ -1,5 +1,10 @@
-import { ChatPage } from '@/components/pages/chat-page';
+import { Suspense } from 'react';
+import { ChatPageWithSearchParams } from '@/components/pages/chat-page';
 
 export default function Page() {
-  return <ChatPage />;
+  return (
+    <Suspense fallback={null}>
+      <ChatPageWithSearchParams />
+    </Suspense>
+  );
 }
