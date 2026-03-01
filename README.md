@@ -51,6 +51,12 @@ npm run dev
 
 The web app uses OpenNext for Cloudflare Workers.
 
+Recommended build settings in Cloudflare:
+
+- Build command: `npm run cf:build`
+- Build output directory: `.open-next/assets`
+- Node version: `20` or `22`
+
 1. Set secret in Cloudflare:
 
 ```bash
