@@ -1,7 +1,11 @@
 node_modules
+node_modules.bak*
 .env
 .vercel
 .nohup-out
 .server.log
+.next
+.open-next
+.wrangler
 Screenshot_*.png
 codeagent/
