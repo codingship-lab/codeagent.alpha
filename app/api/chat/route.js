@@ -1,6 +1,8 @@
 import { generateText } from 'ai';
 import { createGroq } from '@ai-sdk/groq';
 
+export const runtime = 'edge';
+
 const CODE_INTENT_REGEX =
   /(code|react|next|tsx|ts|typescript|js|javascript|component|api|endpoint|diff|patch|file)/i;
 
